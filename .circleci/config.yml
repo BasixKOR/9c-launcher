@@ -7,6 +7,7 @@ orbs:
 commands:
   checkout-update-submodules:
     steps:
+      - run: git config --global credential.helper cache
       - checkout
       - run: git submodule update --init --recursive
   yarn-install:
@@ -29,6 +30,7 @@ jobs:
     #   xcode: "11.3.0"
     # Let's keep this disabled until we figure out the macOS build.
     steps:
+      - run: choco install vcredist-all
       - checkout-update-submodules
       - yarn-install
       - run: 
