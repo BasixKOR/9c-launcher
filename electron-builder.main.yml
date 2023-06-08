@@ -38,7 +38,6 @@ linux:
   target:
     - "tar.gz"
     - "zip"
-    - "deb"
     - "AppImage"
 publish:
   provider: "s3"
